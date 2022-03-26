@@ -4,10 +4,10 @@ This project is designed for the PHOTO EXPO 2022 which conducted in TCE. It coll
 
 ## Programming Languages
 HTML<br>
-Python
+Python<br>
 SQL
 
 ## Packages Used
-Flask
-SQLite3
+Flask<br>
+SQLite3<br>
 SMTPlib
