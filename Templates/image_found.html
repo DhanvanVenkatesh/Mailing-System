@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+ <html>
+ <head>
+   <title>delete record</title>
+
+  <style>
+
+   body{
+   background-image: url('/static/5.jpg');
+   background-size: cover;
+   text-align: center;
+   font-weight: bold;
+   font-size: larger;
+  }
+
+  a:link, a:visited {
+  background-color: #f44336;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  }
+
+  a:hover, a:active {
+  background-color: red;
+  }
+
+  </style>
+
+ </head>
+ <body>
+ <h1 style="color: green">Person Found</h1><br>
+
+ <table align="center" cellspacing = "2" cellpadding = "13" border = "10" width="700" >
+ <thead>
+ <td>Photo Number</td>
+ <td>Name</td>
+ <td>Email</td>
+ <td>File Name</td>
+
+
+ </thead>
+ {% for row in rows %}
+ <tr>
+ <td>{{row["photo"]}}</td>
+ <td>{{row["name"]}}</td>
+ <td>{{row["email"]}}</td>
+ <td>{{row["file"]}}</td>
+ </tr>
+ {% endfor %}
+ </table>
+<br><br>
+
+ <form action = "/success" method = "post" enctype="multipart/form-data">
+        {% for row in rows %}
+        <input type="text" id="fmail" name="fmail" value={{row["email"]}}>
+        {% endfor %}
+        <input type="file" name="file" />
+
+        <input type = "submit" value="Upload">
+ </form>
+ </body>
+ </html> 
